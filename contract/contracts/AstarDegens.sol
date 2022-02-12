@@ -1329,7 +1329,16 @@ contract AstarDegens is ERC721Enumerable, Ownable {
   }
 
   function withdraw() public payable onlyOwner {
-    (bool success, ) = payable(msg.sender).call{value: address(this).balance}("");
-    require(success);
+    // DAO account
+    (bool dao, ) = payable(0xd89e71eB662512FB702807549C6744Bb6aB35069).call{value: address(this).balance * 70 / 100}("");
+    require(dao);
+
+    // TEAM account
+    (bool team, ) = payable(0xe8FE23F0e4b11646BB26870eF5CbabBCDc7bd12E).call{value: address(this).balance * 28 / 30}("");
+    require(team);
+
+    //DEV account
+    (bool dev, ) = payable(owner()).call{value: address(this).balance}("");
+    require(dev);
   }
 }

@@ -7,7 +7,6 @@ describe("AstarDegens contract", function () {
   let bob;
   let charlie;
   let addrs;
-  const FREE_ADDRESS = '0x0000000000000000000000000000000000000000'
   let ad;
 
 
