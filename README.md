@@ -9,3 +9,13 @@ ASTAR DEGENS DAO is focussed on helping the ASTAR community to be creative and t
 We want to be the enablers in funding and moulding your ideas in to a financially viable product, connecting to investors and taking the product to market
 
 70% of the funds raised from NFT minting will be moved to DAO wallet to start supporting the builders & projects from the ASTAR and the wider Polkadot ecosystem
+
+## Contacts:
+
+Discord : https://discord.gg/H9wHEjUjc6
+
+Twitter : @astardegens
+
+Youtube: https://www.youtube.com/channel/UCFNkLmrqNJExZ9nmQIJtpNg/videos
+
+Email : astardegens@gmail.com 
