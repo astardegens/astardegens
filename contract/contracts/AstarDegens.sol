@@ -1222,7 +1222,7 @@ pragma solidity >=0.7.0 <0.9.0;
 contract AstarDegens is ERC721Enumerable, Ownable {
   using Strings for uint256;
 
-  string baseURI;
+  string baseURI = "";
   string public baseExtension = ".json";
   uint256 public cost = 1 ether;
   uint256 public maxSupply = 10000;
@@ -1234,10 +1234,8 @@ contract AstarDegens is ERC721Enumerable, Ownable {
   constructor(
     string memory _name,
     string memory _symbol,
-    string memory _initBaseURI,
     string memory _initNotRevealedUri
   ) ERC721(_name, _symbol) {
-    setBaseURI(_initBaseURI);
     setNotRevealedURI(_initNotRevealedUri);
   }
 
@@ -1299,17 +1297,20 @@ contract AstarDegens is ERC721Enumerable, Ownable {
         : "";
   }
 
-  //only owner
   function reveal() public onlyOwner {
       revealed = true;
+  }
+
+  function is_revealed() public view returns (bool) {
+    return revealed;
   }
 
   function setCost(uint256 _newCost) public onlyOwner {
     cost = _newCost;
   }
 
-  function setmaxMintAmount(uint256 _newmaxMintAmount) public onlyOwner {
-    maxMintAmount = _newmaxMintAmount;
+  function setMaxMintAmount(uint256 _newMaxMintAmount) public onlyOwner {
+    maxMintAmount = _newMaxMintAmount;
   }
 
   function setNotRevealedURI(string memory _notRevealedURI) public onlyOwner {
@@ -1328,7 +1329,11 @@ contract AstarDegens is ERC721Enumerable, Ownable {
     paused = _state;
   }
 
-  function withdraw() public payable onlyOwner {
+  function is_paused() public view returns (bool) {
+    return paused;
+  }
+
+  function withdraw() public payable {
     // DAO account
     (bool dao, ) = payable(0xd89e71eB662512FB702807549C6744Bb6aB35069).call{value: address(this).balance * 70 / 100}("");
     require(dao);
