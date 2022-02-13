@@ -1,0 +1,21 @@
+{
+  "CONTRACT_ADDRESS": "0xCa3C13c06635A45f604a3628C7511D279A748A06",
+  "SCAN_LINK": "https://rinkeby.etherscan.io/address/0xCa3C13c06635A45f604a3628C7511D279A748A06",
+  "NETWORK": {
+    "NAME": "Rinkeby",
+    "SYMBOL": "ETH",
+    "ID": 4,
+    "DECIMALS": 18,
+    "RPC_URL": "https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161",
+    "BLOCK_EXPLORER_URL": "https://rinkeby.etherscan.io/"
+  },
+  "NFT_NAME": "Astar Degens",
+  "SYMBOL": "AD",
+  "MAX_SUPPLY": 100,
+  "WEI_COST": 100000000000000000,
+  "DISPLAY_COST": 0.1,
+  "GAS_LIMIT": 285000,
+  "MARKETPLACE": "TofuNFT",
+  "MARKETPLACE_LINK": "https://testnets.opensea.io/collection/astardegens",
+  "SHOW_BACKGROUND": true
+}
