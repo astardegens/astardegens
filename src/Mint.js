@@ -53,8 +53,8 @@ export const StyledRoundButton = styled.button`
 `;
 
 export const ResponsiveWrapper = styled.div`
-  max-width: 700px;
-  min-width: 350px;
+  max-width: 500px;
+  min-width: 300px;
   justify-content: stretched;
   align-items: stretched;
   @media (min-width: 767px) {

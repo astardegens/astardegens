@@ -32,8 +32,13 @@ export const StyledSection = styled.section`
 export const HeaderSection = styled(StyledSection)`
   background-image: url(/config/images/background.jpg);
   background-repeat: no-repeat;
-  min-height: 100vh;
+  min-height: 80vh;
   align-items: center;
+  display: flex;
+
+  @media (max-width: 800px){
+    flex-direction: column;
+  }
 `;
 
 export const StyledContainer = styled.div`
@@ -57,6 +62,14 @@ export const ImagesContainer = styled(StyledContainer)`
     img {
       width: 200px;
     }
+  }
+`;
+
+export const LogoConainer = styled(StyledContainer)`
+  img {
+    width: 80%;
+    min-width: 300px;
+    max-width: 500px;
   }
 `;
 
@@ -93,9 +106,9 @@ const Home = () => {
             <FontAwesomeIcon icon={faYoutube} size="lg" />
           </SocialLink>
         </Navigation>
-        <StyledContainer style={{height: '100%', textAlign: 'center'}}>
+        <LogoConainer style={{height: '100%', textAlign: 'center'}}>
           <img src="/config/images/logo.png" />
-        </StyledContainer>
+        </LogoConainer>
         <StyledContainer>
           <Mint />
         </StyledContainer>
