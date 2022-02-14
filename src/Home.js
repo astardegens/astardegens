@@ -96,11 +96,10 @@ const Home = () => {
     <Root>
       <HeaderSection>
         <Navigation>
-          {/* <img src='/config/images/logo.png' /> */}
           <SocialLink href="https://twitter.com/astardegens" target="_blank">
             <FontAwesomeIcon icon={faTwitter} size="lg" />
           </SocialLink>
-          <SocialLink href="discord.gg/TGbsGh6UQZ" target="_blank">
+          <SocialLink href="https://discord.gg/TGbsGh6UQZ" target="_blank">
             <FontAwesomeIcon icon={faDiscord} size="lg" />
           </SocialLink>
           <SocialLink href="https://www.youtube.com/channel/UCFNkLmrqNJExZ9nmQIJtpNg/videos" target="_blank">
@@ -147,19 +146,6 @@ const Home = () => {
           <img src="/config/images/44.png" alt="Astar Degens NFT preview"/>
         </ImagesContainer>
       </StyledSection>
-      {/* <StyledSection>
-        <StyledContainer background={CONTAINER_BG} className="reveal" style={{color: "var(--primary-text)"}}>
-          <s.TextTitle style={{ fontSize: 50}}>Contacts</s.TextTitle>
-          Discord: <a href="https://discord.gg/H9wHEjUjc6" target="_blank">https://discord.gg/H9wHEjUjc6</a>
-          <s.SpacerLarge />   
-          Twitter: <a href="https://twitter.com/astardegens" target="_blank">@astardegens</a>
-          <s.SpacerLarge />
-          Youtube: <a href="https://www.youtube.com/channel/UCFNkLmrqNJExZ9nmQIJtpNg/videos" target="_blank">https://www.youtube.com/channel/UCFNkLmrqNJExZ9nmQIJtpNg/videos</a>
-          <s.SpacerLarge />
-          Email: <a href="mailto:astardegens@gmail.com">astardegens@gmail.com</a>
-          <s.SpacerLarge />
-        </StyledContainer>
-      </StyledSection> */}
     </Root>
   )
 }
