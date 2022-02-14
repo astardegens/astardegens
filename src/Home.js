@@ -1,3 +1,4 @@
+
 import React from 'react';
 import styled from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -5,10 +6,10 @@ import { faTwitter, faDiscord, faYoutube } from '@fortawesome/free-brands-svg-ic
 import Mint from './Mint';
 import * as s from "./styles/globalStyles";
 
-const CONTAINER_BG = '#c376c5';
+const CONTAINER_BG = '#15162d';
 
 export const Root = styled.div`
-  background-color: #cf88d3;
+  background-color: #05061d;
 `;
 
 export const StyledSection = styled.section`
@@ -29,12 +30,10 @@ export const StyledSection = styled.section`
 `;
 
 export const HeaderSection = styled(StyledSection)`
-  background-image: url(/config/images/banner.png);
+  background-image: url(/config/images/background.jpg);
   background-repeat: no-repeat;
-  background-size: contain;
-  background-position: top center;
-  align-items: flex-end;
   min-height: 100vh;
+  align-items: center;
 `;
 
 export const StyledContainer = styled.div`
@@ -94,22 +93,36 @@ const Home = () => {
             <FontAwesomeIcon icon={faYoutube} size="lg" />
           </SocialLink>
         </Navigation>
-        {/* <Burger open={open} setOpen={setOpen} />
-        <Menu open={open} setOpen={setOpen} /> */}
-        <Mint />
+        <StyledContainer style={{height: '100%', textAlign: 'center'}}>
+          <img src="/config/images/logo.png" />
+        </StyledContainer>
+        <StyledContainer>
+          <Mint />
+        </StyledContainer>
       </HeaderSection>
       <StyledSection>
         <StyledContainer background={CONTAINER_BG} className="reveal" style={{color: "var(--primary-text)"}}>
-          <s.TextTitle style={{ fontSize: 50}}>Mission</s.TextTitle>
+          <s.TextTitle style={{ fontSize: 50}}>Vision</s.TextTitle>
           <s.SpacerLarge />
           Incubating promising projects and bringing new ideas to the Astar Ecosystem with the help of a community-governed DAO fund.
           <s.SpacerLarge />
           <s.SpacerLarge />
           <s.SpacerLarge />          
-          <s.TextTitle style={{ fontSize: 50}}>Vision</s.TextTitle>
+          <s.TextTitle style={{ fontSize: 50}}>Astar Degens Mission</s.TextTitle>
           <s.SpacerLarge />
-          <p>ASTAR DEGENS DAO is focussed on helping the ASTAR community to be creative and try out their ideas without the fear of failure.  We want to be the enablers in funding and moulding your ideas in to a financially viable product, connecting to investors and taking the product to market</p>
-          <p>70% of the funds raised from NFT minting will be moved to DAO wallet to start supporting the builders & projects from the ASTAR and the wider Polkadot ecosystem</p>
+          <p>Astar Degens is a community without hierarchy. Where impactful action is incentivized and rewarded. We welcome all ideas equally, and value productive effort. As a community, we help realize the value of supportive cooperation within the blockchain space, by encouraging fearless participation within the Astar Network.</p>
+          <s.SpacerLarge /> 
+          <p>We aim to maximize both utility and transparency. We reward and reinvest in our community. We encourage innovation and creativity, allowing us to cultivate interoperability from the ground up. Our collective efforts will act as a community incubator, allowing abstract ideas to transition toward economically viable projects. Community participation and DAO voting will direct our treasury toward supporting promising creators within the Astar ecosystem. Whether you are an artist, creator, influencer, developer, degen, or ape; all are welcome, and all will be rewarded for their constructive contributions.</p>
+          <s.SpacerLarge /> 
+          <p>We believe our platform will create a thriving ecosystem, by incentivizing individual participation. Our DAO is a powerful tool needed to bring new ideas forward, and to build a robust future for the interoperable block-chain space.</p>
+          <s.SpacerLarge /> 
+          <p>We are relentless.</p>
+          <s.SpacerLarge /> 
+          <p>We work as one.</p>
+          <s.SpacerLarge /> 
+          <p>We are Astar Degens.</p>
+          <s.SpacerLarge /> 
+          <p>70% of the funds raised from NFT minting will be moved to DAO wallet to start supporting the builders & projects from the ASTAR and the wider Polkadot ecosystem.</p>
         </StyledContainer>
       </StyledSection>
       <StyledSection>
@@ -120,7 +133,7 @@ const Home = () => {
           <img src="/config/images/44.png" alt="Astar Degens NFT preview"/>
         </ImagesContainer>
       </StyledSection>
-      <StyledSection>
+      {/* <StyledSection>
         <StyledContainer background={CONTAINER_BG} className="reveal" style={{color: "var(--primary-text)"}}>
           <s.TextTitle style={{ fontSize: 50}}>Contacts</s.TextTitle>
           Discord: <a href="https://discord.gg/H9wHEjUjc6" target="_blank">https://discord.gg/H9wHEjUjc6</a>
@@ -132,7 +145,7 @@ const Home = () => {
           Email: <a href="mailto:astardegens@gmail.com">astardegens@gmail.com</a>
           <s.SpacerLarge />
         </StyledContainer>
-      </StyledSection>
+      </StyledSection> */}
     </Root>
   )
 }

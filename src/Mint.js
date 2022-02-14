@@ -35,7 +35,7 @@ export const StyledRoundButton = styled.button`
   padding: 10px;
   font-weight: bold;
   font-size: 15px;
-  color: var(--primary-text);
+  color: black;
   width: 30px;
   height: 30px;
   cursor: pointer;
@@ -54,9 +54,9 @@ export const StyledRoundButton = styled.button`
 
 export const ResponsiveWrapper = styled.div`
   max-width: 700px;
+  min-width: 350px;
   justify-content: stretched;
   align-items: stretched;
-  width: 100%;
   @media (min-width: 767px) {
     flex-direction: row;
   }
@@ -184,10 +184,10 @@ const Mint = () => {
         jc={"center"}
         ai={"center"}
         style={{
-          backgroundColor: "rgba(80,80,80,0.7)",
+          backgroundColor: "rgba(2,3,11,0.4)",
           padding: 24,
           borderRadius: 24,
-          border: "4px dashed var(--secondary)",
+          border: "0px dashed var(--secondary)",
           boxShadow: "0px 5px 11px 2px rgba(0,0,0,0.7)",
         }}
       >
