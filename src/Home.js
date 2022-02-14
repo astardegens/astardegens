@@ -66,6 +66,7 @@ export const ImagesContainer = styled(StyledContainer)`
 `;
 
 export const LogoConainer = styled(StyledContainer)`
+  text-align: right;
   img {
     width: 80%;
     min-width: 300px;
@@ -106,7 +107,7 @@ const Home = () => {
             <FontAwesomeIcon icon={faYoutube} size="lg" />
           </SocialLink>
         </Navigation>
-        <LogoConainer style={{height: '100%', textAlign: 'center'}}>
+        <LogoConainer style={{height: '100%'}}>
           <img src="/config/images/logo.png" />
         </LogoConainer>
         <StyledContainer>
