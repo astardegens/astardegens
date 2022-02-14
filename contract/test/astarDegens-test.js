@@ -46,13 +46,13 @@ describe("AstarDegens contract", function () {
 
     it("Non-owner cannot mint without enough balance", async () => {
       const degenCost = await ad.cost();
-      await expect(ad.connect(bob).mint(1, {value: degenCost.sub(1)})).to.be.reverted;
+      await expect(ad.connect(bob).mint(1, { value: degenCost.sub(1) })).to.be.reverted;
     });
 
     it("Owner cant mint without enough balance or for free", async () => {
       const degenCost = await ad.cost();
-       expect(await ad.mint(1, {value: degenCost.sub(1)})).to.be.ok;
-       expect(await ad.mint(1, {value: 0})).to.be.ok;
+      expect(await ad.mint(1, { value: degenCost.sub(1) })).to.be.ok;
+      expect(await ad.mint(1, { value: 0 })).to.be.ok;
     });
 
     it("Owner and Bob mint", async () => {
@@ -86,11 +86,11 @@ describe("AstarDegens contract", function () {
 
       // Mint first token and expect a balance increase
       const init_contract_balance = await provider.getBalance(ad.address);
-      expect(await ad.mint(1, {value: degenCost})).to.be.ok;
+      expect(await ad.mint(1, { value: degenCost })).to.be.ok;
       expect(await provider.getBalance(ad.address)).to.equal(degenCost);
 
       // Mint two additonal tokens and expect increase again
-      expect(await ad.mint(2, {value: degenCost.mul(2)})).to.be.ok;
+      expect(await ad.mint(2, { value: degenCost.mul(2) })).to.be.ok;
       expect(await provider.getBalance(ad.address)).to.equal(degenCost.mul(3));
     });
 
@@ -105,6 +105,30 @@ describe("AstarDegens contract", function () {
       )
         .to.emit(ad, "Transfer")
         .withArgs(ethers.constants.AddressZero, bob.address, tokenId.add('5'));
+      expect(await ad.totalSupply()).to.equal(5);
+
+    });
+
+    it("Bob mints 1 plus 4", async () => {
+      const degenCost = await ad.cost();
+      const tokenId = await ad.totalSupply();
+
+      expect(
+        await ad.connect(bob).mint(1, {
+          value: degenCost.mul(1),
+        })
+      )
+        .to.emit(ad, "Transfer")
+        .withArgs(ethers.constants.AddressZero, bob.address, tokenId.add('1'));
+      expect(await ad.totalSupply()).to.equal(1);
+
+      expect(
+        await ad.connect(bob).mint(4, {
+          value: degenCost.mul(4),
+        })
+      )
+        .to.emit(ad, "Transfer")
+        .withArgs(ethers.constants.AddressZero, bob.address, tokenId.add('4'));
       expect(await ad.totalSupply()).to.equal(5);
 
     });
@@ -132,9 +156,29 @@ describe("AstarDegens contract", function () {
 
       // should fail to mint additional one in new mint call
       expect(ad.connect(bob).mint(1, { value: degenCost }))
-        .to.revertedWith("Your Degen tribe is already 5 strong");
+        .to.revertedWith("Your Degen tribe can't be over 5 strong");
 
       expect(await ad.totalSupply()).to.equal(5);
+    });
+
+    it("Bob fails to mints 1 plus 5", async () => {
+      const degenCost = await ad.cost();
+      const tokenId = await ad.totalSupply();
+
+      expect(
+        await ad.connect(bob).mint(1, {
+          value: degenCost.mul(1),
+        })
+      )
+        .to.emit(ad, "Transfer")
+        .withArgs(ethers.constants.AddressZero, bob.address, tokenId.add('1'));
+      expect(await ad.totalSupply()).to.equal(1);
+
+      // should fail to mint additional one in new mint call
+      expect(ad.connect(bob).mint(5, { value: degenCost }))
+        .to.revertedWith("Your Degen tribe can't be over 5 strong");
+
+      expect(await ad.totalSupply()).to.equal(1);
     });
 
   });
@@ -142,12 +186,12 @@ describe("AstarDegens contract", function () {
   describe("URI checks", function () {
 
     it("Token URI not available for non-minted token", async function () {
-      await expect( ad.tokenURI(1)).to.be.reverted;
+      await expect(ad.tokenURI(1)).to.be.reverted;
     });
 
     it("URI not visible before reveal", async function () {
       const degenCost = await ad.cost();
-      expect(await ad.mint(1, {value: degenCost})).to.be.ok;
+      expect(await ad.mint(1, { value: degenCost })).to.be.ok;
       expect(await ad.tokenURI(1)).to.equal(not_revealed_uri);
     });
 
@@ -155,7 +199,7 @@ describe("AstarDegens contract", function () {
       expect(ad.reveal()).to.be.ok;
 
       const degenCost = await ad.cost();
-      expect(await ad.mint(5, {value: degenCost.mul(5)})).to.be.ok;
+      expect(await ad.mint(5, { value: degenCost.mul(5) })).to.be.ok;
 
       const baseUri = "baseUri/";
       const baseExtension = ".ext";
@@ -181,18 +225,18 @@ describe("AstarDegens contract", function () {
       const bobFirstCount = 1;
       const ownerSecondCount = 3;
 
-      expect(await ad.mint(ownerFirstCount, {value: degenCost})).to.be.ok;
+      expect(await ad.mint(ownerFirstCount, { value: degenCost })).to.be.ok;
       const ownerFirstWallet = await ad.walletOfOwner(owner.address);
       expect(ownerFirstWallet).to.have.lengthOf(ownerFirstCount);
       expect(ownerFirstWallet[0]).to.equal(1);
       expect(ownerFirstWallet[1]).to.equal(2);
 
-      expect(await ad.connect(bob).mint(bobFirstCount, {value: degenCost})).to.be.ok;
+      expect(await ad.connect(bob).mint(bobFirstCount, { value: degenCost })).to.be.ok;
       const bobFirstWallet = await ad.walletOfOwner(bob.address);
       expect(bobFirstWallet).to.have.lengthOf(bobFirstCount);
       expect(bobFirstWallet[0]).to.equal(3);
 
-      expect(await ad.mint(ownerSecondCount, {value: degenCost})).to.be.ok;
+      expect(await ad.mint(ownerSecondCount, { value: degenCost })).to.be.ok;
       const ownerSecondWallet = await ad.walletOfOwner(owner.address);
       expect(ownerSecondWallet).to.have.lengthOf(ownerFirstCount + ownerSecondCount);
       expect(ownerSecondWallet[0]).to.equal(1);
@@ -204,13 +248,13 @@ describe("AstarDegens contract", function () {
 
   });
 
-  describe("Payout checks", function() {
+  describe("Payout checks", function () {
     it("Withdraw earnings", async () => {
       const degenCost = await ad.cost();
 
-      expect(await ad.mint(3, {value: degenCost.mul(3)})).to.be.ok;
-      expect(await ad.connect(bob).mint(4, {value: degenCost.mul(4)})).to.be.ok;
-      expect(await ad.connect(charlie).mint(5, {value: degenCost.mul(5)})).to.be.ok;
+      expect(await ad.mint(3, { value: degenCost.mul(3) })).to.be.ok;
+      expect(await ad.connect(bob).mint(4, { value: degenCost.mul(4) })).to.be.ok;
+      expect(await ad.connect(charlie).mint(5, { value: degenCost.mul(5) })).to.be.ok;
 
       // Prepare addresses for payout
       const daoAddress = '0xd89e71eB662512FB702807549C6744Bb6aB35069';
