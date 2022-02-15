@@ -210,7 +210,7 @@ const Mint = () => {
         >
           {data.totalSupply} / {CONFIG.MAX_SUPPLY}
         </s.TextTitle>
-        <s.TextDescription
+        {/* <s.TextDescription
           style={{
             textAlign: "center",
             color: "var(--primary-text)",
@@ -219,7 +219,7 @@ const Mint = () => {
           <StyledLink target={"_blank"} href={CONFIG.SCAN_LINK}>
             {truncate(CONFIG.CONTRACT_ADDRESS, 15)}
           </StyledLink>
-        </s.TextDescription>
+        </s.TextDescription> */}
         <s.SpacerSmall />
         {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
           <>
