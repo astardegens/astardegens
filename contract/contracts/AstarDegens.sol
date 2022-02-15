@@ -1239,27 +1239,30 @@ contract AstarDegens is ERC721Enumerable, Ownable {
     setNotRevealedURI(_initNotRevealedUri);
   }
 
-  // internal
   function _baseURI() internal view virtual override returns (string memory) {
     return baseURI;
   }
 
-  // public
-  function mint(uint256 _mintAmount) public payable {
+  function mint_many(uint256 _mintAmount) public payable {
+    if (msg.sender != owner()) {
+      require(msg.value  >= cost * _mintAmount);
+    }
+    for (uint256 i = 1; i <= _mintAmount; i++) {
+      mint();
+    }
+  }
+
+  function mint() public payable {
     uint256 supply = totalSupply();
     require(!paused, "Degens are lazy, call the king to wake them up");
-    require(_mintAmount > 0, "Mint amount is 0");
-    require(_mintAmount <= maxMintAmount, "Degen tribe is max 5 apes");
-    require(supply + _mintAmount <= maxSupply, "End of supply");
+    require(supply < maxSupply, "End of supply");
 
     if (msg.sender != owner()) {
-      require(msg.value >= cost * _mintAmount);
-      require(balanceOf(msg.sender) + _mintAmount <= maxMintAmount, "Your Degen tribe can't be over 5 strong");
+      require(msg.value >= cost);
+      require(balanceOf(msg.sender) < maxMintAmount, "Your Degen tribe can't be over 5 strong");
     }
 
-    for (uint256 i = 1; i <= _mintAmount; i++) {
-      _safeMint(msg.sender, supply + i);
-    }
+    _safeMint(msg.sender, supply + 1);
   }
 
   function walletOfOwner(address _owner)
@@ -1301,7 +1304,7 @@ contract AstarDegens is ERC721Enumerable, Ownable {
       revealed = true;
   }
 
-  function is_revealed() public view returns (bool) {
+  function isRevealed() public view returns (bool) {
     return revealed;
   }
 
@@ -1329,8 +1332,16 @@ contract AstarDegens is ERC721Enumerable, Ownable {
     paused = _state;
   }
 
-  function is_paused() public view returns (bool) {
+  function isPaused() public view returns (bool) {
     return paused;
+  }
+
+  function getMaxSupply() public view returns (uint256) {
+      return maxSupply;
+  }
+
+  function setMaxSupply(uint256 _maxSupply) public onlyOwner {
+    maxSupply = _maxSupply;
   }
 
   function withdraw() public payable {
