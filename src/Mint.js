@@ -13,10 +13,10 @@ const truncate = (input, len) =>
   padding: 16px 40px;
   border-radius: 10px;
   border: none;
-  background-color: var(--secondary);
+  background-color: ${props => props.disabled ? '#505050' : '#e253e5' };
   font-weight: bold;
   color: var(--secondary-text);
-  cursor: pointer;
+  cursor: ${props => props.disabled ? 'not-allowed' : 'pointer' };
   box-shadow: 0px 6px 0px -2px rgba(250, 250, 250, 0.3);
   -webkit-box-shadow: 0px 6px 0px -2px rgba(250, 250, 250, 0.3);
   -moz-box-shadow: 0px 6px 0px -2px rgba(250, 250, 250, 0.3);
@@ -98,6 +98,7 @@ const Mint = () => {
     SHOW_BACKGROUND: false,
   });
   const MAX_MINT_AMOUNT = 5;
+  const CAN_MINT = false;
 
   const { containerProps, indicatorEl } = useLoading({
     loading: claimingNft,
@@ -194,6 +195,14 @@ const Mint = () => {
         <s.TextTitle
           style={{
             textAlign: "center",
+            color: "var(--secondary)",
+          }}
+        >
+          Minting starts Feb 2022.
+        </s.TextTitle>
+        <s.TextTitle
+          style={{
+            textAlign: "center",
             fontSize: 50,
             fontWeight: "bold",
             color: "var(--accent-text)",
@@ -257,6 +266,7 @@ const Mint = () => {
                 </s.TextDescription>
                 <s.SpacerSmall />
                 <StyledButton
+                  disabled={!CAN_MINT}
                   onClick={(e) => {
                     e.preventDefault();
                     dispatch(connect());
