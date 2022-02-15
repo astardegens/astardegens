@@ -44,7 +44,12 @@ export const HeaderSection = styled(StyledSection)`
 export const StyledContainer = styled.div`
   background-color: ${(props) => props.background};
   padding: 40px;
-  width: 70%
+  width: 70%;
+
+  @media (max-width: 800px){
+    padding: 10px;
+    width: 90%;
+  }
 `;
 
 export const ImagesContainer = styled(StyledContainer)`
@@ -69,8 +74,13 @@ export const LogoConainer = styled(StyledContainer)`
   text-align: right;
   img {
     width: 80%;
-    min-width: 300px;
+    min-width: 200px;
     max-width: 500px;
+  }
+
+  @media (max-width: 800px){
+    text-align: center;
+    margin-top: 50px;
   }
 `;
 
