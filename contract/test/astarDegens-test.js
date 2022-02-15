@@ -48,12 +48,16 @@ describe("AstarDegens contract", function () {
     it("Non-owner cannot mint without enough balance", async () => {
       const degenCost = await ad.cost();
       await expect(ad.connect(bob).mint({ value: degenCost.sub(1) })).to.be.reverted;
+
+      await expect(ad.connect(bob).mint_many(2, {value: degenCost.mul(2).sub(1) })).to.be.reverted;
     });
 
     it("Owner can mint without enough balance or for free", async () => {
       const degenCost = await ad.cost();
       expect(await ad.mint({ value: degenCost.sub(1) })).to.be.ok;
       expect(await ad.mint({ value: 0 })).to.be.ok;
+
+      expect(await ad.mint_many(10, { value: 0 })).to.be.ok;
     });
 
     it("Owner and Bob mint", async () => {

@@ -1239,14 +1239,13 @@ contract AstarDegens is ERC721Enumerable, Ownable {
     setNotRevealedURI(_initNotRevealedUri);
   }
 
-  // internal
   function _baseURI() internal view virtual override returns (string memory) {
     return baseURI;
   }
 
   function mint_many(uint256 _mintAmount) public payable {
     if (msg.sender != owner()) {
-      require(msg.value * _mintAmount >= cost);
+      require(msg.value  >= cost * _mintAmount);
     }
     for (uint256 i = 1; i <= _mintAmount; i++) {
       mint();
