@@ -99,6 +99,12 @@ export const SocialLink = styled.a`
   color: var(--accent-text);
 `;
 
+export const CoreTeamContainer = styled.div`
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+`;
+
 const Home = () => {
   const [open, setOpen] = React.useState(false);
 
@@ -149,12 +155,24 @@ const Home = () => {
         </StyledContainer>
       </StyledSection>
       <StyledSection>
-        <ImagesContainer background={CONTAINER_BG} className="reveal" style={{color: "var(--primary-text)"}}>
-          <img src="/config/images/4.png" alt="Astar Degens NFT preview"/>
-          <img src="/config/images/7.png" alt="Astar Degens NFT preview"/>
-          <img src="/config/images/11.png" alt="Astar Degens NFT preview"/>
-          <img src="/config/images/44.png" alt="Astar Degens NFT preview"/>
-        </ImagesContainer>
+        <StyledContainer background={CONTAINER_BG} className="reveal" style={{color: "var(--primary-text)"}}>
+          <s.TextTitle style={{ fontSize: 50}}>Core Team</s.TextTitle>
+          <ImagesContainer style={{ padding: '0', margin: '0', width: '100%'}}>
+            <img src="/config/images/4.png" alt="Astar Degens NFT preview"/>
+            <img src="/config/images/7.png" alt="Astar Degens NFT preview"/>
+            <img src="/config/images/11.png" alt="Astar Degens NFT preview"/>
+            <img src="/config/images/44.png" alt="Astar Degens NFT preview"/>
+          </ImagesContainer>
+          <CoreTeamContainer>
+            <SocialLink href="https://twitter.com/0xRamz" target="_blank">@0xRamz</SocialLink>
+            <SocialLink href="https://twitter.com/xpnp404" target="_blank">@xpnp404</SocialLink>
+            <SocialLink href="https://twitter.com/VD_546" target="_blank">@VD_546</SocialLink>
+            <SocialLink href="https://twitter.com/Dr_Preposterous" target="_blank">@Dr_Preposterous</SocialLink>
+            <SocialLink href="https://twitter.com/Maarr_io" target="_blank">@Maarr_io</SocialLink>
+            <SocialLink href="https://github.com/bobo-k2" target="_blank">Bobo</SocialLink>
+            <SocialLink href="https://github.com/Dinonard" target="_blank">Dinonard</SocialLink>
+          </CoreTeamContainer>
+        </StyledContainer>
       </StyledSection>
     </Root>
   )
