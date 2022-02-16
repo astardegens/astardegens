@@ -200,6 +200,13 @@ const Mint = () => {
         >
           Minting starts Feb 2022.
         </s.TextTitle>
+        <s.TextDescription style={{ textAlign: "center", color: "var(--accent-text)" }}>
+          NFT Marketplace
+        </s.TextDescription>
+        <StyledLink target={"_blank"} href={CONFIG.MARKETPLACE_LINK}>
+          {CONFIG.MARKETPLACE}
+        </StyledLink>
+        <s.SpacerSmall />
         <s.TextTitle
           style={{
             textAlign: "center",
@@ -228,7 +235,7 @@ const Mint = () => {
             >
               The sale has ended.
             </s.TextTitle>
-            <s.TextDescription
+            {/* <s.TextDescription
               style={{ textAlign: "center", color: "var(--accent-text)" }}
             >
               You can still find {CONFIG.NFT_NAME} on
@@ -236,7 +243,7 @@ const Mint = () => {
             <s.SpacerSmall />
             <StyledLink target={"_blank"} href={CONFIG.MARKETPLACE_LINK}>
               {CONFIG.MARKETPLACE}
-            </StyledLink>
+            </StyledLink> */}
           </>
         ) : (
           <>
