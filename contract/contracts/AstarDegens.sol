@@ -1248,13 +1248,13 @@ contract AstarDegens is ERC721Enumerable, Ownable {
   function mint(uint256 _mintAmount) public payable {
     uint256 supply = totalSupply();
     require(!paused, "Degens are lazy, call the king to wake them up");
-    require(_mintAmount > 0);
+    require(_mintAmount > 0, "Mint amount is 0");
     require(_mintAmount <= maxMintAmount, "Degen tribe is max 5 apes");
-    require(supply + _mintAmount <= maxSupply);
+    require(supply + _mintAmount <= maxSupply, "End of supply");
 
     if (msg.sender != owner()) {
-      require(msg.value >= cost * _mintAmount);
-      require(balanceOf(msg.sender) < maxMintAmount, "Your Degen tribe is already 5 strong");
+      require(msg.value >= cost * _mintAmount, "Not enough funds for mint");
+      require(balanceOf(msg.sender) + _mintAmount <= maxMintAmount, "Your Degen tribe can't be over 5 strong");
     }
 
     for (uint256 i = 1; i <= _mintAmount; i++) {
