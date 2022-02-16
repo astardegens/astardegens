@@ -137,7 +137,7 @@ describe("AstarDegens contract", function () {
       const degenCost = await ad.cost();
       const tokenId = await ad.totalSupply();
 
-      expect(ad.connect(bob).mint(6, { value: degenCost.mul(6), }))
+      await expect(ad.connect(bob).mint(6, { value: degenCost.mul(6), }))
         .to.revertedWith("Degen tribe is max 5 apes");
     });
 
@@ -155,8 +155,8 @@ describe("AstarDegens contract", function () {
       expect(await ad.totalSupply()).to.equal(5);
 
       // should fail to mint additional one in new mint call
-      expect(ad.connect(bob).mint(1, { value: degenCost }))
-        .to.revertedWith("Your Degen tribe can't be over 5 strong");
+      await expect(ad.connect(bob).mint(1, { value: degenCost }))
+        .to.be.revertedWith("Your Degen tribe can't be over 5 strong");
 
       expect(await ad.totalSupply()).to.equal(5);
     });
@@ -174,11 +174,20 @@ describe("AstarDegens contract", function () {
         .withArgs(ethers.constants.AddressZero, bob.address, tokenId.add('1'));
       expect(await ad.totalSupply()).to.equal(1);
 
-      // should fail to mint additional one in new mint call
-      expect(ad.connect(bob).mint(5, { value: degenCost }))
+      // should fail to mint additional five in new mint call
+      await expect(ad.connect(bob).mint(5, { value: degenCost.mul(5) }))
         .to.revertedWith("Your Degen tribe can't be over 5 strong");
 
       expect(await ad.totalSupply()).to.equal(1);
+    });
+
+    it("Bob fails to mints 2 with funds for 1", async () => {
+      const degenCost = await ad.cost();
+
+      await expect(ad.connect(bob).mint(2, { value: degenCost }))
+        .to.revertedWith("Not enough funds for mint");
+
+      expect(await ad.totalSupply()).to.equal(0);
     });
 
   });
