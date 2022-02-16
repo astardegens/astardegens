@@ -169,7 +169,7 @@ const Home = () => {
             <SocialLink href="https://twitter.com/VD_546" target="_blank">@VD_546</SocialLink>
             <SocialLink href="https://twitter.com/Dr_Preposterous" target="_blank">@Dr_Preposterous</SocialLink>
             <SocialLink href="https://twitter.com/Maarr_io" target="_blank">@Maarr_io</SocialLink>
-            <SocialLink href="https://github.com/bobo-k2" target="_blank">Bobo</SocialLink>
+            <SocialLink href="https://twitter.com/b0b0_k" target="_blank">@b0b0_k</SocialLink>
             <SocialLink href="https://github.com/Dinonard" target="_blank">Dinonard</SocialLink>
           </CoreTeamContainer>
         </StyledContainer>
