@@ -198,7 +198,7 @@ const Mint = () => {
             color: "var(--secondary)",
           }}
         >
-          Minting starts Feb 2022.
+          Minting starts on February 21<span style={{ verticalAlign: 'super', fontSize: 12 }}>st</span> 2022 at 13:00 UTC.
         </s.TextTitle>
         <s.TextDescription style={{ textAlign: "center", color: "var(--accent-text)" }}>
           NFT Marketplace
