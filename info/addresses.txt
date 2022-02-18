@@ -1,0 +1,6 @@
+# hidden metadata
+https://gateway.pinata.cloud/ipfs/QmS3VmXBrVFRRdkSSBfgbRB5mzVdnANNdGaZPyo69BMwsR/hidden.json
+QmS3VmXBrVFRRdkSSBfgbRB5mzVdnANNdGaZPyo69BMwsR
+
+# hidden image linked from metadata
+https://gateway.pinata.cloud/ipfs/QmNMjVu59ouiuMFdpMqJny8SRfoLP118zrVQFKQpYt6g6g/hidden.png
