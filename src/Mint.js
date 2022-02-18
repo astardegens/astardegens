@@ -98,7 +98,7 @@ const Mint = () => {
     SHOW_BACKGROUND: false,
   });
   const MAX_MINT_AMOUNT = 5;
-  const CAN_MINT = false;
+  const CAN_MINT = true;
 
   const { containerProps, indicatorEl } = useLoading({
     loading: claimingNft,
@@ -217,7 +217,7 @@ const Mint = () => {
         >
           {data.totalSupply} / {CONFIG.MAX_SUPPLY}
         </s.TextTitle>
-        {/* <s.TextDescription
+        <s.TextDescription
           style={{
             textAlign: "center",
             color: "var(--primary-text)",
@@ -226,7 +226,7 @@ const Mint = () => {
           <StyledLink target={"_blank"} href={CONFIG.SCAN_LINK}>
             {truncate(CONFIG.CONTRACT_ADDRESS, 15)}
           </StyledLink>
-        </s.TextDescription> */}
+        </s.TextDescription>
         <s.SpacerSmall />
         {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
           <>
