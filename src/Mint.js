@@ -13,10 +13,10 @@ const truncate = (input, len) =>
   padding: 16px 40px;
   border-radius: 10px;
   border: none;
-  background-color: var(--secondary);
+  background-color: ${props => props.disabled ? '#505050' : '#e253e5' };
   font-weight: bold;
   color: var(--secondary-text);
-  cursor: pointer;
+  cursor: ${props => props.disabled ? 'not-allowed' : 'pointer' };
   box-shadow: 0px 6px 0px -2px rgba(250, 250, 250, 0.3);
   -webkit-box-shadow: 0px 6px 0px -2px rgba(250, 250, 250, 0.3);
   -moz-box-shadow: 0px 6px 0px -2px rgba(250, 250, 250, 0.3);
@@ -35,7 +35,7 @@ export const StyledRoundButton = styled.button`
   padding: 10px;
   font-weight: bold;
   font-size: 15px;
-  color: var(--primary-text);
+  color: black;
   width: 30px;
   height: 30px;
   cursor: pointer;
@@ -53,10 +53,10 @@ export const StyledRoundButton = styled.button`
 `;
 
 export const ResponsiveWrapper = styled.div`
-  max-width: 700px;
+  max-width: 500px;
+  min-width: 300px;
   justify-content: stretched;
   align-items: stretched;
-  width: 100%;
   @media (min-width: 767px) {
     flex-direction: row;
   }
@@ -98,6 +98,7 @@ const Mint = () => {
     SHOW_BACKGROUND: false,
   });
   const MAX_MINT_AMOUNT = 5;
+  const CAN_MINT = true;
 
   const { containerProps, indicatorEl } = useLoading({
     loading: claimingNft,
@@ -184,13 +185,28 @@ const Mint = () => {
         jc={"center"}
         ai={"center"}
         style={{
-          backgroundColor: "rgba(80,80,80,0.7)",
+          backgroundColor: "rgba(2,3,11,0.4)",
           padding: 24,
           borderRadius: 24,
-          border: "4px dashed var(--secondary)",
+          border: "0px dashed var(--secondary)",
           boxShadow: "0px 5px 11px 2px rgba(0,0,0,0.7)",
         }}
       >
+        <s.TextTitle
+          style={{
+            textAlign: "center",
+            color: "var(--secondary)",
+          }}
+        >
+          Minting starts on February 21<span style={{ verticalAlign: 'super', fontSize: 12 }}>st</span> 2022 at 13:00 UTC.
+        </s.TextTitle>
+        <s.TextDescription style={{ textAlign: "center", color: "var(--accent-text)" }}>
+          NFT Marketplace
+        </s.TextDescription>
+        <StyledLink target={"_blank"} href={CONFIG.MARKETPLACE_LINK}>
+          {CONFIG.MARKETPLACE}
+        </StyledLink>
+        <s.SpacerSmall />
         <s.TextTitle
           style={{
             textAlign: "center",
@@ -219,7 +235,7 @@ const Mint = () => {
             >
               The sale has ended.
             </s.TextTitle>
-            <s.TextDescription
+            {/* <s.TextDescription
               style={{ textAlign: "center", color: "var(--accent-text)" }}
             >
               You can still find {CONFIG.NFT_NAME} on
@@ -227,7 +243,7 @@ const Mint = () => {
             <s.SpacerSmall />
             <StyledLink target={"_blank"} href={CONFIG.MARKETPLACE_LINK}>
               {CONFIG.MARKETPLACE}
-            </StyledLink>
+            </StyledLink> */}
           </>
         ) : (
           <>
@@ -257,6 +273,7 @@ const Mint = () => {
                 </s.TextDescription>
                 <s.SpacerSmall />
                 <StyledButton
+                  disabled={!CAN_MINT}
                   onClick={(e) => {
                     e.preventDefault();
                     dispatch(connect());
@@ -351,7 +368,7 @@ const Mint = () => {
             }}
           >
             Please make sure you are connected to the right network (
-            {CONFIG.NETWORK.NAME} Mainnet) and the correct address. Please note:
+            {CONFIG.NETWORK.NAME}) and the correct address. Please note:
             Once you make the purchase, you cannot undo this action.
           </s.TextDescription>
           <s.SpacerSmall />
