@@ -35,7 +35,7 @@ describe("AstarDegens contract", function () {
     });
 
     it("Confirm degen price", async function () {
-      cost = ethers.utils.parseUnits('1', 0)
+      cost = ethers.utils.parseUnits('6', 0)
       const expectedCost = cost.mul(ethers.constants.WeiPerEther);
       expect(await ad.cost()).to.equal(expectedCost);
     });
@@ -266,8 +266,8 @@ describe("AstarDegens contract", function () {
       expect(await ad.connect(charlie).mint(5, { value: degenCost.mul(5) })).to.be.ok;
 
       // Prepare addresses for payout
-      const daoAddress = '0xd89e71eB662512FB702807549C6744Bb6aB35069';
-      const teamAddress = '0xe8FE23F0e4b11646BB26870eF5CbabBCDc7bd12E';
+      const daoAddress = '0xf5aff98659f5934A4f5ed1e23Da81996D140fF40';
+      const teamAddress = '0x1e96bFcDB460cD963C611eE9c60836CAeF35eCf4';
 
       // Prepare expected payouts
       const initContractBalance = await provider.getBalance(ad.address);

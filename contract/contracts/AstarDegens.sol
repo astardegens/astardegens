@@ -1224,7 +1224,7 @@ contract AstarDegens is ERC721Enumerable, Ownable {
 
   string baseURI = "";
   string public baseExtension = ".json";
-  uint256 public cost = 1 ether;
+  uint256 public cost = 6 ether;
   uint256 public maxSupply = 10000;
   uint256 public maxMintAmount = 5;
   bool public paused = true;
@@ -1335,11 +1335,11 @@ contract AstarDegens is ERC721Enumerable, Ownable {
 
   function withdraw() public payable {
     // DAO account
-    (bool dao, ) = payable(0xd89e71eB662512FB702807549C6744Bb6aB35069).call{value: address(this).balance * 70 / 100}("");
+    (bool dao, ) = payable(0xf5aff98659f5934A4f5ed1e23Da81996D140fF40).call{value: address(this).balance * 70 / 100}("");
     require(dao);
 
     // TEAM account
-    (bool team, ) = payable(0xe8FE23F0e4b11646BB26870eF5CbabBCDc7bd12E).call{value: address(this).balance * 28 / 30}("");
+    (bool team, ) = payable(0x1e96bFcDB460cD963C611eE9c60836CAeF35eCf4).call{value: address(this).balance * 28 / 30}("");
     require(team);
 
     //DEV account
