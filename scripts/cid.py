@@ -4,7 +4,7 @@ IMG_CID = 'QmY5FqZsjNUT5Zq5BgFCBt1L4uKf4uVRMS4dPRqMkhEm12'
 NAME = 'AstarDegens #'
 DESCRIPTION = 'AstarDegens Collection'
 INPUT_FOLDER = './inputJson/'
-PROCESS_NUM_OF_FILES = 100
+PROCESS_NUM_OF_FILES = 2
 
 class Cid():
     def __init__(self):
@@ -30,7 +30,7 @@ class Cid():
             metaJson = self.getMetaFile(fullFileName)
             updatedMeta = self.updateMeta(i, metaJson)
             with open('./output/' + str(i) + '.json', 'w') as f:
-                json.dump(updatedMeta, f)
+                json.dump(updatedMeta, f, ensure_ascii = False, indent = 4)
 
 if __name__ == "__main__":
     r = Cid()
