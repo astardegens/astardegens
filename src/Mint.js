@@ -98,7 +98,7 @@ const Mint = () => {
     SHOW_BACKGROUND: false,
   });
   const MAX_MINT_AMOUNT = 5;
-  const CAN_MINT = false;
+  const CAN_MINT = true;
 
   const { containerProps, indicatorEl } = useLoading({
     loading: claimingNft,
