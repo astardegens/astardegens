@@ -1,12 +1,13 @@
-list of all attributes manually
+### List of all attributes added manually
     attributesDict.py
-python3 makeGeneratedDict > generatedDict.py (uses attributesDict)
-    -> generatedDict.py
-python3 updateTraits.py (uses generatedDict)
-    -> json files
+### Create dictionary of all possible changes (it uses attributesDict.py)
+`python3 makeGeneratedDict > generatedDict.py` 
 
---- make summary of all attributes and count them
-python3 makeTraitSummary.py
+### Update/regenerate all traits according to generatedDict.py
+`python3 updateTraits.py` 
 
---- update name and description
-python3 cid.py
+### Make summary of all used attributes and count them
+`python3 makeTraitSummary.py > summary.txt`
+
+### Update name, cid, description in all files (if needed)
+`python3 cid.py`
