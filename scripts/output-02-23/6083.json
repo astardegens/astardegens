@@ -1,0 +1,51 @@
+{
+    "name": "Astar Degen #6083",
+    "description": "ASTAR DEGENS is a NFT based DAO that envisions to incubate promising projects and bring new ideas to the Astar Ecosystem with the help of a community-governed DAO fund.",
+    "image": "ipfs://QmSQ2FHMTi8MFa88ERS6niseb2ggeGrBvqsLZHgd23L8sF/6083.png",
+    "dna": "8f00553acbf5bd647f257059a0fc26cecebdfa9e",
+    "edition": 1083,
+    "date": 1645191969139,
+    "attributes": [
+        {
+            "trait_type": "BACKGROUND",
+            "value": "GlowDarkBrown"
+        },
+        {
+            "trait_type": "BACKATTACHMENT",
+            "value": "DoubleAxe"
+        },
+        {
+            "trait_type": "BODY",
+            "value": "Yeti"
+        },
+        {
+            "trait_type": "EYE",
+            "value": "Teal"
+        },
+        {
+            "trait_type": "ATTIRE",
+            "value": "SamuraiRed"
+        },
+        {
+            "trait_type": "MOUTH",
+            "value": "Cringe"
+        },
+        {
+            "trait_type": "ACCESSORIES",
+            "value": "Watch"
+        },
+        {
+            "trait_type": "EYEGLASSES",
+            "value": "ThugLife"
+        },
+        {
+            "trait_type": "HAT",
+            "value": "BaseballHelmetDark"
+        },
+        {
+            "trait_type": "ARMOR",
+            "value": "ShieldGreen"
+        }
+    ],
+    "compiler": "HashLips Art Engine"
+}
