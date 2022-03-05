@@ -1,6 +1,6 @@
 {
-  "CONTRACT_ADDRESS": "0xCa3C13c06635A45f604a3628C7511D279A748A06",
-  "SCAN_LINK": "https://astar.subscan.io/account/0xCa3C13c06635A45f604a3628C7511D279A748A06",
+  "CONTRACT_ADDRESS": "0xd59fC6Bfd9732AB19b03664a45dC29B8421BDA9a",
+  "SCAN_LINK": "https://astar.subscan.io/account/0xd59fC6Bfd9732AB19b03664a45dC29B8421BDA9a",
   "NETWORK": {
     "NAME": "Astar Mainnet",
     "SYMBOL": "ASTR",
@@ -14,8 +14,8 @@
   "MAX_SUPPLY": 10000,
   "WEI_COST": 600000000000000000000,
   "DISPLAY_COST": 600,
-  "GAS_LIMIT": 285000,
+  "GAS_LIMIT": 300000,
   "MARKETPLACE": "TofuNFT",
-  "MARKETPLACE_LINK": "https://tofunft.com/astar",
+  "MARKETPLACE_LINK": "https://tofunft.com/collection/astardegens/items",
   "SHOW_BACKGROUND": true
 }
