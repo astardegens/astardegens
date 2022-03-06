@@ -17,3 +17,7 @@ ipfs://bafybeiatmgmvhkfwirlacg3y2rz7pbegte6hdde5gpx4j53gsxtrhemqze/
 
 # baseURI - IPFS for metafiles with updated traits (Mar 5th, 2022)
 ipfs://bafybeieeeorrcsxl4oe23m6dcaa3hoj2lbsvbarobgeer4le6eg3vafgji/
+
+# baseURI - IPFS for metafiles with updated traits (Mar 6th, 2022)
+ipfs://bafybeih6g5ue2eyyrjssmyjgqpdeclo6zd7yt3d7cpjxigaodjcssxnawa/
+ipfs://bafybeih6g5ue2eyyrjssmyjgqpdeclo6zd7yt3d7cpjxigaodjcssxnawa/
