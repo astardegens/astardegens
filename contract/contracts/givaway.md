@@ -19,13 +19,13 @@
 
 
 # AD COMMUNITY (2)
-* itarique#7060 ??
-    * TokenId:
-[Tx](000)
+* itarique#7060 0x5d694e07b68bd654CfF0d3fbb666684d40E8494a
+    * TokenId: 2828
+[Tx](https://blockscout.com/astar/tx/0x7fa49d4731e08b62d980fcd6463c083af8a29c5ea3cf8a0a83fd417972234e91/token-transfers)
 
-* HBZ#3674 ??
-    * TokenId:
-[Tx](000)
+* HBZ#3674 0x574E4E316566c3278eB80f89C3b4760A2Af6BE18
+    * TokenId: 2829
+[Tx](https://blockscout.com/astar/tx/0x04328104fcc9f99be833356a8f54bd8a3a370d53a36a854e99862eeba2c7da9a/token-transfers)
 
 # Astar Community (5)
 * stano#2409 0x789299d57Cc344B88e67f50BDa991e038eEDe8c7
@@ -47,3 +47,7 @@
 * multivitamin#2461 0x3fFC143a07E18d5d173891342214fd14f547E9cD
     * TokenId: 3407
 [Tx](https://blockscout.com/astar/tx/0xb8bbc87f1a770e6446158878e6968c6805b847716be44436c5c8537ee7f4cc2e/token-transfers)
+
+# Starlay team (16)
+[account](https://blockscout.com/astar/address/0xA5761e38870D3Bb9665FA846E634E3275fdF2Db3/tokens)
+
