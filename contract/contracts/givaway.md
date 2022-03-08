@@ -51,3 +51,15 @@
 # Starlay team (16)
 [account](https://blockscout.com/astar/address/0xA5761e38870D3Bb9665FA846E634E3275fdF2Db3/tokens)
 
+# DeFitter
+* DeFitter 0xCb7d9cb4C1144db98f3390273BfBC1C0ff69d335
+   * TokenId: 2832
+[Tx](https://blockscout.com/astar/tx/0xe6d8b1312af759d438cbf2c5bb6e21904b2d45b6001a08b55d35bbfa1cab2164/token-transfers)
+
+* @YCryptoc (winner) 0x873189010EA10be77bf2A4A18ff6F1b26d94D340
+   * TokenId: 2833
+[Tx](https://blockscout.com/astar/tx/0x0d42b9459250a4e2fbda6a746bf608b4bc557db4c87f70cf38b31e3715308eb5/token-transfers)
+
+* @32kFVxjM6RDLjnM (winner) 0x64469383ACd07265dA598075626a7Ea32C701435
+   * TokenId: 2418
+[Tx](https://blockscout.com/astar/tx/0xe2bc55d779e6b9f1c1c4bbdd93c5af3829facbcd798bdfb974232994a6d2f52a/token-transfers)
