@@ -63,3 +63,9 @@
 * @32kFVxjM6RDLjnM (winner) 0x64469383ACd07265dA598075626a7Ea32C701435
    * TokenId: 2418
 [Tx](https://blockscout.com/astar/tx/0xe2bc55d779e6b9f1c1c4bbdd93c5af3829facbcd798bdfb974232994a6d2f52a/token-transfers)
+
+# ArthSwap
+* mabdoulaye#7694 0x9e9f3A95B4a25CD78B3C92839b583Cf5182D2Dc5
+   * TokenId: 2419
+[Tx](https://blockscout.com/astar/tx/0xbfb7eefa1dc56a69a26ff6b400cdb697f8510c8ceb9916eb36111f155c64a37c/token-transfers)
+
