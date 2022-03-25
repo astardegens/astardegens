@@ -1219,16 +1219,16 @@ abstract contract Ownable is Context {
 
 pragma solidity >=0.7.0 <0.9.0;
 
-contract AstarDegens is ERC721Enumerable, Ownable {
+contract ShidenPass is ERC721Enumerable, Ownable {
   using Strings for uint256;
 
   string baseURI = "";
   string public baseExtension = ".json";
-  uint256 public cost = 6 ether;
-  uint256 public maxSupply = 10000;
-  uint256 public maxMintAmount = 5;
+  uint256 public cost = 1 ether;
+  uint256 public maxSupply = 5000;
+  uint256 public maxMintAmount = 1;
   bool public paused = true;
-  bool public revealed = false;
+  bool public revealed = true;
   string public notRevealedUri;
 
   constructor(
@@ -1247,14 +1247,14 @@ contract AstarDegens is ERC721Enumerable, Ownable {
   // public
   function mint(uint256 _mintAmount) public payable {
     uint256 supply = totalSupply();
-    require(!paused, "Degens are lazy, call the king to wake them up");
+    require(!paused, "The contract is paused");
     require(_mintAmount > 0, "Mint amount is 0");
-    require(_mintAmount <= maxMintAmount, "Degen tribe is max 5 apes");
+    require(_mintAmount <= maxMintAmount, "Max mint is exceeded");
     require(supply + _mintAmount <= maxSupply, "End of supply");
 
     if (msg.sender != owner()) {
       require(msg.value >= cost * _mintAmount, "Not enough funds for mint");
-      require(balanceOf(msg.sender) + _mintAmount <= maxMintAmount, "Your Degen tribe can't be over 5 strong");
+      require(balanceOf(msg.sender) + _mintAmount <= maxMintAmount, "You have already minted");
     }
 
     for (uint256 i = 1; i <= _mintAmount; i++) {
@@ -1334,14 +1334,6 @@ contract AstarDegens is ERC721Enumerable, Ownable {
   }
 
   function withdraw() public payable {
-    // DAO account
-    (bool dao, ) = payable(0xf5aff98659f5934A4f5ed1e23Da81996D140fF40).call{value: address(this).balance * 70 / 100}("");
-    require(dao);
-
-    // TEAM account
-    (bool team, ) = payable(0x1e96bFcDB460cD963C611eE9c60836CAeF35eCf4).call{value: address(this).balance * 28 / 30}("");
-    require(team);
-
     //DEV account
     (bool dev, ) = payable(owner()).call{value: address(this).balance}("");
     require(dev);
