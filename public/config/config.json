@@ -1,16 +1,16 @@
 {
-  "CONTRACT_ADDRESS": "0xd59fC6Bfd9732AB19b03664a45dC29B8421BDA9a",
-  "SCAN_LINK": "https://astar.subscan.io/account/0xd59fC6Bfd9732AB19b03664a45dC29B8421BDA9a",
+  "CONTRACT_ADDRESS": "0xCa3C13c06635A45f604a3628C7511D279A748A06",
+  "SCAN_LINK": "https://shibuya.subscan.io/account/0xCa3C13c06635A45f604a3628C7511D279A748A06",
   "NETWORK": {
-    "NAME": "Astar Mainnet",
-    "SYMBOL": "ASTR",
-    "ID": 592,
+    "NAME": "Shibuya",
+    "SYMBOL": "SBY",
+    "ID": 81,
     "DECIMALS": 18,
-    "RPC_URL": "https://rpc.astar.network:8545",
-    "BLOCK_EXPLORER_URL": "https://astar.subscan.io"
+    "RPC_URL": "https://rpc.shibuya.astar.network:8545",
+    "BLOCK_EXPLORER_URL": "https://blockscout.com/shibuya"
   },
-  "NFT_NAME": "Astar Degens",
-  "SYMBOL": "DEGEN",
+  "NFT_NAME": "Astar NFT",
+  "SYMBOL": "TEST",
   "MAX_SUPPLY": 10000,
   "WEI_COST": 600000000000000000000,
   "DISPLAY_COST": 600,
