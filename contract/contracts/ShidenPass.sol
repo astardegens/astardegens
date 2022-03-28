@@ -1467,9 +1467,8 @@ contract ShidenPass is ERC721Enumerable, Ownable {
         // but we not not use it in this smart contract,
         // we only check if staked amount is > 0
         uint128 staker = ASTARBASE.checkStakerStatus(user);
-        if (staker == 0) return false; // Not an active staker in dapps-staking
 
-        return true;
+        return staker > 0;
     }
 
     function setAstarBaseAddress(address astarBaseDeployedAddress) public {
