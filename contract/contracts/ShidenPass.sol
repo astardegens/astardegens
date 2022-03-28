@@ -663,7 +663,7 @@ contract ERC721 is Context, ERC165, IERC721, IERC721Metadata {
     string private _symbol;
 
     // AstarBase contract address initialized to 0
-    IAstarBase public constant ASTARBASE =
+    IAstarBase public ASTARBASE =
         IAstarBase(0x0000000000000000000000000000000000000000);
 
     // Mapping from token ID to owner address
@@ -1470,6 +1470,10 @@ contract ShidenPass is ERC721Enumerable, Ownable {
         if (staker == 0) return false; // Not an active staker in dapps-staking
 
         return true;
+    }
+
+    function setAstarBaseAddress(address astarBaseDeployedAddress) public {
+        ASTARBASE = IAstarBase(astarBaseDeployedAddress);
     }
 
     function walletOfOwner(address _owner)
