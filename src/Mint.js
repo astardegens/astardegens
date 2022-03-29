@@ -251,7 +251,7 @@ const Mint = () => {
             <s.TextTitle
               style={{ textAlign: "center", color: "var(--accent-text)" }}
             >
-              1 {CONFIG.SYMBOL} costs {CONFIG.DISPLAY_COST}{" "}
+              1 {CONFIG.SYMBOL} costs {data.isPassHolder ? '0' : CONFIG.DISPLAY_COST}{" "}
               {CONFIG.NETWORK.SYMBOL}.
             </s.TextTitle>
             <s.SpacerXSmall />

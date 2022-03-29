@@ -31,8 +31,6 @@ export const isPassHolder = async (user) => {
       const stakerStatus = await smartContract.methods.checkStakerStatus(user).call();
       const isRegistered = await smartContract.methods.isRegistered(user).call();
 
-      console.log(isRegistered, stakerStatus);
-
       return isRegistered; // && stakerStatus > 0;
     } catch (err) {
       console.log(err);
