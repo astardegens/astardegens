@@ -1,4 +1,19 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: BSD-3-Clause
+
+/**
+ *
+ *    ______               __
+ *   /      \             /  |
+ *  /$$$$$$  |  _______  _$$ |_     ______    ______
+ *  $$ |__$$ | /       |/ $$   |   /      \  /      \
+ *  $$    $$ |/$$$$$$$/ $$$$$$/    $$$$$$  |/$$$$$$  |
+ *  $$$$$$$$ |$$      \   $$ | __  /    $$ |$$ |  $$/
+ *  $$ |  $$ | $$$$$$  |  $$ |/  |/$$$$$$$ |$$ |
+ *  $$ |  $$ |/     $$/   $$  $$/ $$    $$ |$$ |
+ *  $$/   $$/ $$$$$$$/     $$$$/   $$$$$$$/ $$/
+ *
+ */
+
 
 // File: @openzeppelin/contracts/utils/introspection/IERC165.sol
 pragma solidity ^0.8.0;
@@ -650,7 +665,7 @@ pragma solidity ^0.8.0;
  * the Metadata extension, but not including the Enumerable extension, which is available separately as
  * {ERC721Enumerable}.
  */
-import "./IAstarBase.sol";
+
 
 contract ERC721 is Context, ERC165, IERC721, IERC721Metadata {
     using Address for address;
@@ -1398,6 +1413,23 @@ abstract contract Ownable is Context {
         _owner = newOwner;
         emit OwnershipTransferred(oldOwner, newOwner);
     }
+}
+
+// File: contracts/IAstarBase.sol
+pragma solidity >=0.7.0;
+
+interface IAstarBase {
+    /// @notice Check if given address was registered in Astarbase
+    /// @param evmAddress, EVM address used for registration
+    function isRegistered(address evmAddress) external view returns (bool);
+
+    /// @notice Check if given address was registered and return staked amount
+    /// @param evmAddress, EVM address used for registration
+    /// @return amount, staked amount on the SS58 address (mapped with evmAddress)
+    function checkStakerStatus(address evmAddress)
+        external
+        view
+        returns (uint128);
 }
 
 pragma solidity >=0.7.0 <0.9.0;
