@@ -121,7 +121,7 @@ const Mint = () => {
         gasLimit: String(totalGasLimit),
         to: CONFIG.CONTRACT_ADDRESS,
         from: blockchain.account,
-        value: totalCostWei,
+        value: data.isPassHolder ? 0 : totalCostWei,
       })
       .once("error", (err) => {
         console.log(err);
@@ -199,7 +199,7 @@ const Mint = () => {
             color: "var(--secondary)",
           }}
         >
-          Minting starts on February 21<span style={{ verticalAlign: 'super', fontSize: 12 }}>st</span> 2022 at 13:00 UTC.
+          Minting starts on March 28<span style={{ verticalAlign: 'super', fontSize: 12 }}>st</span> 2022 at 13:00 UTC.
         </s.TextTitle>
         <s.TextDescription style={{ textAlign: "center", color: "var(--accent-text)" }}>
           NFT Marketplace

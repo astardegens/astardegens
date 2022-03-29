@@ -1,6 +1,7 @@
 
 import React from 'react';
 import styled from "styled-components";
+import { useSelector } from "react-redux";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter, faDiscord, faYoutube } from '@fortawesome/free-brands-svg-icons'
 import Mint from './Mint';
@@ -70,9 +71,15 @@ export const ImagesContainer = styled(StyledContainer)`
   }
 `;
 
+export const ShidenPassContainer = styled(StyledContainer)`
+  text-align: left;
+`;
+
 export const LogoConainer = styled(StyledContainer)`
   text-align: right;
-  img {
+  display: flex;
+  flex-direction: column;
+  img.back {
     width: 80%;
     min-width: 200px;
     max-width: 500px;
@@ -107,6 +114,8 @@ export const CoreTeamContainer = styled.div`
 
 const Home = () => {
   const [open, setOpen] = React.useState(false);
+  const blockchain = useSelector((state) => state.blockchain);
+  const data = useSelector((state) => state.data);
 
   return (
     <Root>
@@ -123,7 +132,8 @@ const Home = () => {
           </SocialLink>
         </Navigation>
         <LogoConainer style={{height: '100%'}}>
-          <img src="/config/images/logo.png" />
+          {blockchain.account ? (data.isPassHolder ? <img width="100" src="/config/images/shiden-pass-ok.jpg" /> : <img width="100" src="/config/images/shiden-pass-nok.jpg" />) : <img width="100" src="/config/images/shiden-pass-gray.jpg" />}
+          <img className="back" src="/config/images/94.png" />
         </LogoConainer>
         <StyledContainer>
           <Mint />
