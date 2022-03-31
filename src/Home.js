@@ -139,51 +139,6 @@ const Home = () => {
           <Mint />
         </StyledContainer>
       </HeaderSection>
-      <StyledSection>
-        <StyledContainer background={CONTAINER_BG} className="reveal" style={{color: "var(--primary-text)"}}>
-          <s.TextTitle style={{ fontSize: 50}}>Vision</s.TextTitle>
-          <s.SpacerLarge />
-          Incubating promising projects and bringing new ideas to the Astar Ecosystem with the help of a community-governed DAO fund.
-          <s.SpacerLarge />
-          <s.SpacerLarge />
-          <s.SpacerLarge />
-          <s.TextTitle style={{ fontSize: 50}}>Astar Degens Mission</s.TextTitle>
-          <s.SpacerLarge />
-          <p>Astar Degens is a community without hierarchy. Where impactful action is incentivized and rewarded. We welcome all ideas equally, and value productive effort. As a community, we help realize the value of supportive cooperation within the blockchain space, by encouraging fearless participation within the Astar Network.</p>
-          <s.SpacerLarge />
-          <p>We aim to maximize both utility and transparency. We reward and reinvest in our community. We encourage innovation and creativity, allowing us to cultivate interoperability from the ground up. Our collective efforts will act as a community incubator, allowing abstract ideas to transition toward economically viable projects. Community participation and DAO voting will direct our treasury toward supporting promising creators within the Astar ecosystem. Whether you are an artist, creator, influencer, developer, degen, or ape; all are welcome, and all will be rewarded for their constructive contributions.</p>
-          <s.SpacerLarge />
-          <p>We believe our platform will create a thriving ecosystem, by incentivizing individual participation. Our DAO is a powerful tool needed to bring new ideas forward, and to build a robust future for the interoperable block-chain space.</p>
-          <s.SpacerLarge />
-          <p>We are relentless.</p>
-          <s.SpacerLarge />
-          <p>We work as one.</p>
-          <s.SpacerLarge />
-          <p>We are Astar Degens.</p>
-          <s.SpacerLarge />
-          <p>70% of the funds raised from NFT minting will be moved to DAO wallet to start supporting the builders & projects from the ASTAR and the wider Polkadot ecosystem.</p>
-        </StyledContainer>
-      </StyledSection>
-      <StyledSection>
-        <StyledContainer background={CONTAINER_BG} className="reveal" style={{color: "var(--primary-text)"}}>
-          <s.TextTitle style={{ fontSize: 50}}>Core Team</s.TextTitle>
-          <ImagesContainer style={{ padding: '0', margin: '0', width: '100%'}}>
-            <img src="/config/images/4.png" alt="Astar Degens NFT preview"/>
-            <img src="/config/images/7.png" alt="Astar Degens NFT preview"/>
-            <img src="/config/images/11.png" alt="Astar Degens NFT preview"/>
-            <img src="/config/images/44.png" alt="Astar Degens NFT preview"/>
-          </ImagesContainer>
-          <CoreTeamContainer>
-            <SocialLink href="https://twitter.com/0xRamz" target="_blank">@0xRamz</SocialLink>
-            <SocialLink href="https://twitter.com/xpnp404" target="_blank">@xpnp404</SocialLink>
-            <SocialLink href="https://twitter.com/VD_546" target="_blank">@VD_546</SocialLink>
-            <SocialLink href="https://twitter.com/Dr_Preposterous" target="_blank">@Dr_Preposterous</SocialLink>
-            <SocialLink href="https://twitter.com/Maarr_io" target="_blank">@Maarr_io</SocialLink>
-            <SocialLink href="https://twitter.com/b0b0_k" target="_blank">@b0b0_k</SocialLink>
-            <SocialLink href="https://github.com/Dinonard" target="_blank">Dinonard</SocialLink>
-          </CoreTeamContainer>
-        </StyledContainer>
-      </StyledSection>
     </Root>
   )
 }

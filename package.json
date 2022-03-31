@@ -1,7 +1,7 @@
 {
-  "name": "astar-degens",
+  "name": "shiden-pass",
   "version": "1.0.0",
-  "description": "Astar Degens NFT minting app",
+  "description": "ShidenPass NFT minting app",
   "private": true,
   "dependencies": {
     "@agney/react-loading": "^0.1.2",
