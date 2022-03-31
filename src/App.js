@@ -146,27 +146,11 @@ function App() {
       .then((receipt) => {
         console.log(receipt);
         setFeedback(
-          `WOW, the ${CONFIG.NFT_NAME} is yours! go visit Opensea.io to view it.`
+          `WOW, the ${CONFIG.NFT_NAME} is yours! go visit TofuNFT.com to view it.`
         );
         setClaimingNft(false);
         dispatch(fetchData(blockchain.account));
       });
-  };
-
-  const decrementMintAmount = () => {
-    let newMintAmount = mintAmount - 1;
-    if (newMintAmount < 1) {
-      newMintAmount = 1;
-    }
-    setMintAmount(newMintAmount);
-  };
-
-  const incrementMintAmount = () => {
-    let newMintAmount = mintAmount + 1;
-    if (newMintAmount > 10) {
-      newMintAmount = 10;
-    }
-    setMintAmount(newMintAmount);
   };
 
   const getData = () => {
