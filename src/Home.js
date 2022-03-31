@@ -32,7 +32,7 @@ export const StyledSection = styled.section`
 
 export const HeaderSection = styled(StyledSection)`
   background-image: url(/config/images/background.jpg);
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   min-height: 80vh;
   align-items: center;
   display: flex;
@@ -78,7 +78,7 @@ export const ShidenPassContainer = styled(StyledContainer)`
 export const LogoConainer = styled(StyledContainer)`
   text-align: right;
   display: flex;
-  flex-direction: column;
+  height: 100%;
   img.back {
     width: 80%;
     min-width: 200px;
@@ -131,9 +131,11 @@ const Home = () => {
             <FontAwesomeIcon icon={faYoutube} size="lg" />
           </SocialLink>
         </Navigation>
-        <LogoConainer style={{height: '100%'}}>
-          {blockchain.account ? (data.isPassHolder ? <img width="100" src="/config/images/shiden-pass-ok.jpg" /> : <img width="100" src="/config/images/shiden-pass-nok.jpg" />) : <img width="100" src="/config/images/shiden-pass-gray.jpg" />}
+        <LogoConainer>
           <img className="back" src="/config/images/mintingimage.png" />
+          <div>
+            {blockchain.account ? (data.isPassHolder ? <img width="100" src="/config/images/shiden-pass-ok.jpg" /> : <img width="100" src="/config/images/shiden-pass-nok.jpg" />) : <img width="100" src="/config/images/shiden-pass-gray.jpg" />}
+          </div>
         </LogoConainer>
         <StyledContainer>
           <Mint />
