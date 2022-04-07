@@ -6,3 +6,7 @@
   --accent: #505050;
   --accent-text: #ffffff;
 }
+
+body {
+  background-color: black;
+}

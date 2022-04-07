@@ -98,7 +98,7 @@ const Mint = () => {
     MARKETPLACE_LINK: "",
     SHOW_BACKGROUND: false,
   });
-  const MAX_MINT_AMOUNT = 5;
+  const MAX_MINT_AMOUNT = 1;
   const CAN_MINT = true;
 
   const { containerProps, indicatorEl } = useLoading({
@@ -121,7 +121,7 @@ const Mint = () => {
         gasLimit: String(totalGasLimit),
         to: CONFIG.CONTRACT_ADDRESS,
         from: blockchain.account,
-        value: totalCostWei,
+        value: data.isPassHolder ? 0 : totalCostWei,
       })
       .once("error", (err) => {
         console.log(err);
@@ -199,7 +199,8 @@ const Mint = () => {
             color: "var(--secondary)",
           }}
         >
-          Minting starts on February 21<span style={{ verticalAlign: 'super', fontSize: 12 }}>st</span> 2022 at 13:00 UTC.
+          {/* Minting starts on March 28<span style={{ verticalAlign: 'super', fontSize: 12 }}>st</span> 2022 at 13:00 UTC. */}
+          Mint your FREE NFT if you are an active staker in dApps staking.
         </s.TextTitle>
         <s.TextDescription style={{ textAlign: "center", color: "var(--accent-text)" }}>
           NFT Marketplace
@@ -251,7 +252,7 @@ const Mint = () => {
             <s.TextTitle
               style={{ textAlign: "center", color: "var(--accent-text)" }}
             >
-              1 {CONFIG.SYMBOL} costs {CONFIG.DISPLAY_COST}{" "}
+              1 {CONFIG.SYMBOL} costs {data.isPassHolder ? '0' : CONFIG.DISPLAY_COST}{" "}
               {CONFIG.NETWORK.SYMBOL}.
             </s.TextTitle>
             <s.SpacerXSmall />
@@ -308,7 +309,7 @@ const Mint = () => {
                   {feedback}
                 </s.TextDescription>
                 <s.SpacerMedium />
-                <s.Container ai={"center"} jc={"center"} fd={"row"}>
+                {/* <s.Container ai={"center"} jc={"center"} fd={"row"}>
                   <StyledRoundButton
                     style={{ lineHeight: 0.4 }}
                     disabled={claimingNft ? 1 : 0}
@@ -338,7 +339,7 @@ const Mint = () => {
                   >
                     +
                   </StyledRoundButton>
-                </s.Container>
+                </s.Container> */}
                 <s.SpacerSmall />
                 <s.Container ai={"center"} jc={"center"} fd={"row"}>
                   <StyledButton
@@ -368,24 +369,22 @@ const Mint = () => {
               color: "var(--primary-text)",
             }}
           >
-            Please make sure you are connected to the right network (
-            {CONFIG.NETWORK.NAME}) and the correct address. Please note:
-            Once you make the purchase, you cannot undo this action.
+            To claim this free NFT you need to be an active staker in daaps Staking,
+            and you need to be registered as ShidenPass holder.
           </s.TextDescription>
-          <s.SpacerSmall />
-          <s.TextDescription
+          <s.SpacerLarge />
+        <s.TextDescription
             style={{
               textAlign: "center",
               color: "var(--primary-text)",
             }}
           >
-            We have set the gas limit to {CONFIG.GAS_LIMIT} for the contract to
-            successfully mint your NFT. We recommend that you don't lower the
-            gas limit.
+            Please make sure you are connected to the right network (
+            {CONFIG.NETWORK.NAME}) and the correct address. Please note:
+            Once you make the purchase, you cannot undo this action.
           </s.TextDescription>
           <s.SpacerLarge />
-          <s.SpacerLarge />
-      </s.Container>            
+      </s.Container>
     </ResponsiveWrapper>
   );
 };
